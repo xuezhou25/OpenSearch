@@ -119,7 +119,7 @@ public final class HttpTransportSettings {
     public static final Setting<Integer> SETTING_HTTP_PUBLISH_PORT = intSetting("http.publish_port", -1, -1, Property.NodeScope);
     public static final Setting<Boolean> SETTING_HTTP_DETAILED_ERRORS_ENABLED = Setting.boolSetting(
         "http.detailed_errors.enabled",
-        true,
+        false,
         Property.NodeScope
     );
     public static final Setting<Boolean> SETTING_HTTP_CONTENT_TYPE_REQUIRED = new Setting<>(

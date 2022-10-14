@@ -590,8 +590,10 @@ public class OpenSearchException extends RuntimeException implements ToXContentF
         // Render the exception with a simple message
         if (detailed == false) {
             Throwable t = e;
+            //String message = null;
             for (int counter = 0; counter < 10 && t != null; counter++) {
                 if (t instanceof OpenSearchException) {
+                    //message = t.getClass().getSimpleName() + "[" + t.getMessage() + "]";
                     break;
                 }
                 t = t.getCause();
@@ -1612,6 +1614,12 @@ public class OpenSearchException extends RuntimeException implements ToXContentF
             org.opensearch.cluster.decommission.NodeDecommissionedException.class,
             org.opensearch.cluster.decommission.NodeDecommissionedException::new,
             164,
+            V_3_0_0
+        ),
+        OPEN_SEARCH_INVALID_ARGUMENT(
+            org.opensearch.OpenSearchInvalidArgument.class,
+            org.opensearch.OpenSearchInvalidArgument::new,
+            165,
             V_3_0_0
         );
 
